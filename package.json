@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "test": "cypress run",
+  "cypress:open": "cypress open",
+  "cypress:run": "CYPRESS_RECORD_KEY=e2709a3e-712f-4236-bc8c-74a342805b64 cypress run",
+  "cypress:report": "cypress run --reporter mochawesome && mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochawesome.json && mochawesome-report-generator --reportDir cypress/reports --reportFilename report.html --assetsDir assets"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
